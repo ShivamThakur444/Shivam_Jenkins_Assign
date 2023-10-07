@@ -1,27 +1,33 @@
 pipeline {
     agent any
+
     stages {
-        stage('git repo & clean') {
+        stage('Stage1') {
             steps {
-               bat "rmdir  /s /q TicketBookingServiceJunitTesting"
-                bat "git clone https://github.com/kishancs2020/TicketBookingServiceJunitTesting.git"
-                bat "mvn clean -f TicketBookingServiceJunitTesting"
+                echo 'Hello World'
             }
         }
-        stage('install') {
+         stage('Stage2') {
             steps {
-                bat "mvn install -f TicketBookingServiceJunitTesting"
+                class Test
+{
+    public static void main(String []args)
+    {
+        System.out.println("My First Java Program.");
+    }
+};
             }
         }
-        stage('test') {
+         stage('Stage3') {
             steps {
-                bat "mvn test -f TicketBookingServiceJunitTesting"
+                echo 'Hello World'
             }
         }
-        stage('package') {
+         stage('Stage4') {
             steps {
-                bat "mvn package -f TicketBookingServiceJunitTesting"
+                echo 'Hello '
             }
         }
     }
+}
 }
