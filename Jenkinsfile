@@ -15,7 +15,7 @@ pipeline {
     {
         System.out.println("My First Java Program.");
     }
-};
+}
             }
         }
          stage('Stage3') {
